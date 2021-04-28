@@ -3,6 +3,7 @@
 
 
 #include <filesystem>
+#include <optional>
 #include <stdexcept>
 #include <system_error>
 #include <utility>
@@ -43,6 +44,19 @@ inline namespace error_code {
 		return std::filesystem::path(path);
 	}
 }  // namespace error_code
+
+
+namespace optional {
+	inline std::optional<std::filesystem::path> get_special_path(const int& csidl) noexcept
+	{
+		const auto [result, path] = get_result_path_pair(csidl);
+		if (!result) {
+			return std::nullopt;
+		} else {
+			return std::filesystem::path(path);
+		}
+	}
+}  // namespace optional
 }  // namespace pathwrap
 
 
