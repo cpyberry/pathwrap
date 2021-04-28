@@ -1,3 +1,13 @@
+/*
+Copyright 2021 cpyberry
+https://github.com/cpyberry/pathwrap
+
+cpyberry
+email: cpyberry222@gmail.com
+github: https://github.com/cpyberry
+*/
+
+
 #ifndef _PATHWRAP_HPP
 #define _PATHWRAP_HPP
 
