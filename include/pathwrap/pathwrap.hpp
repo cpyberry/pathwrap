@@ -4,6 +4,7 @@
 
 #include <filesystem>
 #include <stdexcept>
+#include <system_error>
 #include <utility>
 
 #include <ShlObj.h>
@@ -30,6 +31,18 @@ inline std::filesystem::path get_special_path(const int& csidl)
 		throw std::runtime_error("Failed to get directory path");
 	}
 }
+
+
+inline namespace error_code {
+	inline std::filesystem::path get_special_path(const int& csidl, std::error_code& code) noexcept
+	{
+		const auto [result, path] = get_result_path_pair(csidl);
+		if (!result) {
+			code = std::make_error_code(std::errc::io_error);
+		}
+		return std::filesystem::path(path);
+	}
+}  // namespace error_code
 }  // namespace pathwrap
 
 
