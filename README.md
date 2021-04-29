@@ -51,6 +51,16 @@ if (path_optional.has_value()) {
 }
 ```
 
+Of course, you can also get many paths other than desktop.
+
+```c++
+pathwrap::get_special_path(CSIDL_MYVIDEO);
+pathwrap::get_special_path(CSIDL_WINDOWS);
+pathwrap::get_special_path(CSIDL_STARTUP);
+pathwrap::get_special_path(CSIDL_MYDOCUMENTS);
+pathwrap::get_special_path(CSIDL_FAVORITES);
+```
+
 ## Founder
 
 * [cpyberry](https://github.com/cpyberry)
