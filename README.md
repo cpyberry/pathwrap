@@ -61,6 +61,8 @@ pathwrap::get_special_path(CSIDL_MYDOCUMENTS);
 pathwrap::get_special_path(CSIDL_FAVORITES);
 ```
 
+For more information, search for CSIDL values.
+
 ## Founder
 
 * [cpyberry](https://github.com/cpyberry)
